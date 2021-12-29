@@ -16,6 +16,10 @@
 @import '../css/apps/keep/cmps/note-list.css';
 
 /* mail */
+@import '../css/apps/mail/pages/cmps/mailList.css';
+@import '../css/apps/mail/pages/cmps/sidebar.css';
+@import '../css/apps/mail/pages/cmps/mailpreview.css';
+
 
 
 /* PAGES */
@@ -29,4 +33,5 @@
 
 /* mail */
 @import '../css/apps/mail/pages/mail-app.css';
+
 

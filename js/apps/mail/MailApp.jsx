@@ -1,8 +1,8 @@
-
 const { Link } = ReactRouterDOM
 import { Loader } from './cmps/Loader.jsx'
 import { MailService } from './services/mail.service.js'
 import { MailList } from './cmps/MailList.jsx'
+import { SideBar } from './cmps/SideBar.jsx'
 export class MailApp extends React.Component {
 
     state = {
@@ -41,7 +41,7 @@ export class MailApp extends React.Component {
         if (!mails) return <Loader />
         return (
             <section className='mail-app'>
-                {/* <SideBar /> */}
+                <SideBar />
                 <MailList mails= {mails}/>
 
                 

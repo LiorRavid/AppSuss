@@ -1,0 +1,14 @@
+.mail-preview{
+
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgb(240, 240, 240);
+    
+}
+
+.mail-preview:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
