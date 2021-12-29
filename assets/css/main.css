@@ -8,6 +8,9 @@
 /* CMPS */
 @import '../css/cmps/app-header.css';
 @import '../css/cmps/app-home.css';
+@import '../css/cmps/app-about.css';
 @import '../css/cmps/app-footer.css';
+@import '../css/cmps/mail/mail-app.css';
+@import '../css/cmps/keep/keep-app.css';
 
 /* PAGES */
