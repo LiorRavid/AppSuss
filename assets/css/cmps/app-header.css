@@ -1,0 +1,91 @@
+.app-header {
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    height: 8vh;
+    background-color: rgb(205, 227, 254);
+    /* background-color: rgb(165, 165, 165); */
+    z-index: 1;
+}
+
+.app-header-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.logo {
+    font-family: aquire;
+    font-size: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.logo div {
+    font-family: veggy;
+    letter-spacing: 0.2rem;
+}
+
+.btn-main-menu {
+    font-size: 30px;
+    font-family: fa;
+}
+
+.btn-main-menu::before {
+    content: '\f00a';
+}
+
+nav {
+    border-radius: 8px;
+    background-color: rgb(232, 241, 253);
+    float: right;
+    padding: 10px;
+}
+
+nav span {
+    font-size: 30px;
+    font-family: fa;
+}
+
+nav ul {
+    margin: 0;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+nav li {
+    flex-direction: column;
+    display: flex;
+}
+
+nav div {
+    font-family: lato;
+}
+
+
+/* .appsus-menu-list a {} */
+
+.appsus-menu-list a:hover {
+    color: rgb(107, 107, 107);
+}
+
+.menu-link-book::before {
+    content: '\f02d';
+}
+
+.menu-link-keep::before {
+    content: '\f249';
+}
+
+.menu-link-mail::before {
+    content: '\f0e0';
+}
+
+.menu-link-about::before {
+    content: '\f129';
+}

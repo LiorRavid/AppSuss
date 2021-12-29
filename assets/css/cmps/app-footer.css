@@ -1,0 +1,10 @@
+.app-footer {
+    font-family: lato;
+    text-align: center;
+    height: 5vh;
+    background-color: rgb(205, 227, 254);
+}
+
+.app-footer h3 {
+    margin: 10px;
+}
