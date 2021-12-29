@@ -7,10 +7,16 @@
 
 /* CMPS */
 @import '../css/cmps/app-header.css';
-@import '../css/cmps/app-home.css';
-@import '../css/cmps/app-about.css';
 @import '../css/cmps/app-footer.css';
-@import '../css/cmps/mail/mail-app.css';
-@import '../css/cmps/keep/keep-app.css';
 
 /* PAGES */
+/* common pages */
+@import '../css/pages/app-home.css';
+@import '../css/pages/app-about.css';
+
+/* app pages */
+@import '../css/apps/keep/pages/keep-app.css';
+@import '../css/apps/mail/pages/mail-app.css';
+
+
+
