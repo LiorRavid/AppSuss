@@ -6,22 +6,27 @@
 @import '../css/parts/layout.css';
 
 /* CMPS */
-/* common pages */
+/* common cmps*/
 @import '../css/cmps/app-header.css';
 @import '../css/cmps/app-footer.css';
 
-/* app cmps */
+/* App Cmps*/ 
+/* keep */
 @import '../css/apps/keep/cmps/note-preview.css';
 @import '../css/apps/keep/cmps/note-list.css';
+
+/* mail */
+
 
 /* PAGES */
 /* common pages */
 @import '../css/pages/app-home.css';
 @import '../css/pages/app-about.css';
 
-/* app pages */
+/* App Pages */
+/* keep */
 @import '../css/apps/keep/pages/keep-app.css';
+
+/* mail */
 @import '../css/apps/mail/pages/mail-app.css';
-
-
 
