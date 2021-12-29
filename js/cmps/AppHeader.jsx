@@ -30,7 +30,7 @@ export class AppHeader extends React.Component {
                     <div className="btn-main-menu" onClick={this.onMainMenu}></div>
                 </section>
                 <nav>
-                    { !showMenu && <ul className="appsus-menu-list clean-list">
+                    { showMenu && <ul className="appsus-menu-list clean-list">
                         <li  onClick={()=>this.moveLogo('book')}>
                             <Link to="/book"><span className="menu-link-book" ></span><div>Book</div></Link>     
                         </li>
