@@ -29,8 +29,8 @@ export class AppHeader extends React.Component {
                     </div>
                     <div className="btn-main-menu" onClick={this.onMainMenu}></div>
                 </section>
-                <nav>
-                    { !showMenu && <ul className="appsus-menu-list clean-list">
+                {showMenu && <nav>
+                    <ul className="appsus-menu-list clean-list">
                         <li  onClick={()=>this.moveLogo('book')}>
                             <Link to="/book"><span className="menu-link-book" ></span><div>Book</div></Link>     
                         </li>
@@ -43,8 +43,8 @@ export class AppHeader extends React.Component {
                         <li onClick={()=>this.moveLogo('about')}>
                             <Link   to="/about"><span className="menu-link-about"></span><div>About</div></Link>
                         </li>
-                    </ul>}
-                </nav>
+                    </ul>
+                </nav>}
             </header>
         )
     }
