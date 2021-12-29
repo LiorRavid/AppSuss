@@ -29,7 +29,7 @@ export function App() {
           </Switch>
         </main>
       </section>
-      <AppBooter/>
+      <AppFooter/>
       <UserMsg />
     </Router>
   );
