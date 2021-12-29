@@ -2,8 +2,6 @@
 .note-list-ul {
     column-count: 5;
     padding-top: 20px;
-    /* min-height: 500px; */
-    /* column-gap: 15px; */
     column-width: 300px;
     break-inside: avoid;
     overflow: hidden;
