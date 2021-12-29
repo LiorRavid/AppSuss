@@ -1,5 +1,5 @@
 import { NoteImg } from './NoteImg.jsx'
-import { NoteTodos} from './NoteTodos'
+import { NoteTodos} from './NoteTodos.jsx'
 import { NoteTxt } from './NoteTxt.jsx'
 import { NoteVideo} from './NoteVideo.jsx'
 

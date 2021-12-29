@@ -20,23 +20,23 @@ function _starterNotes() {
           style: { 'background-color': '#fff475' },
           label: [],
       },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: true,
-      //     info: {
-      //         title: '',
-      //         txt: `
-      //               if (brain! = empty) {
-      //                   keepCoding();
-      //               } else {
-      //                   drinkCoffee();
-      //               }
-      //             `
-      //     },
-      //     style: { 'background-color': '#cbf0f8' },
-      //     label: [],
-      // },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: true,
+          info: {
+              title: '',
+              txt: `
+                    if (brain! = empty) {
+                        keepCoding();
+                    } else {
+                        drinkCoffee();
+                    }
+                  `
+          },
+          style: { 'background-color': '#cbf0f8' },
+          label: [],
+      },
       {
           id: utilService.makeId(),
           type: 'note-video',
@@ -48,106 +48,106 @@ function _starterNotes() {
           style: { 'background-color': '#e6c9a8' },
           label: [],
       },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-img',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         url: 'https://assets.hongkiat.com/uploads/programming-jokes/joke-job-arrays.jpg'
-      //     },
-      //     style: { 'background-color': '#aecbfa' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: false,
-      //     info: {
-      //         title: 'Sprint 3',
-      //         txt: 'omg'
-      //     },
-      //     style: { 'background-color': '#e8eaed' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         txt: 'blah blah blah'
-      //     },
-      //     style: { 'background-color': '#ffffff' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-todos',
-      //     isPinned: true,
-      //     info: {
-      //         title: 'Sprint list so far',
-      //         todos: [{ txt: 'minesweeper', isChecked: true }, { txt: 'memegen', isChecked: true }, { txt: 'appsus', isChecked: false }],
-      //     },
-      //     style: { 'background-color': '#ccff90' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         txt: 'blah blah blah'
-      //     },
-      //     style: { 'background-color': '#ffffff' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-img',
-      //     isPinned: false,
-      //     info: {
-      //         title: 'Me while sprint 3',
-      //         url: 'https://media2.giphy.com/media/unQ3IJU2RG7DO/giphy.gif'
-      //     },
-      //     style: { 'background-color': '#ffffff' },
-      //     label: [],
-      // },
+      {
+          id: utilService.makeId(),
+          type: 'note-img',
+          isPinned: false,
+          info: {
+              title: '',
+              url: 'https://assets.hongkiat.com/uploads/programming-jokes/joke-job-arrays.jpg'
+          },
+          style: { 'background-color': '#aecbfa' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: false,
+          info: {
+              title: 'Sprint 3',
+              txt: 'omg'
+          },
+          style: { 'background-color': '#e8eaed' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: false,
+          info: {
+              title: '',
+              txt: 'blah blah blah'
+          },
+          style: { 'background-color': '#ffffff' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-todos',
+          isPinned: true,
+          info: {
+              title: 'Sprint list so far',
+              todos: [{ txt: 'minesweeper', isChecked: true }, { txt: 'memegen', isChecked: true }, { txt: 'appsus', isChecked: false }],
+          },
+          style: { 'background-color': '#ccff90' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: false,
+          info: {
+              title: '',
+              txt: 'blah blah blah'
+          },
+          style: { 'background-color': '#ffffff' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-img',
+          isPinned: false,
+          info: {
+              title: 'Me while sprint 3',
+              url: 'https://media2.giphy.com/media/unQ3IJU2RG7DO/giphy.gif'
+          },
+          style: { 'background-color': '#ffffff' },
+          label: [],
+      },
 
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-img',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         url: 'https://miro.medium.com/max/1050/1*80PmaIWGzskApKLQ_uSpZg.png'
-      //     },
-      //     style: { 'background-color': '#aecbfa' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         txt: 'Proggrammer - A machine that turns coffee into code'
-      //     },
-      //     style: { 'background-color': '#fff475' },
-      //     label: [],
-      // },
-      // {
-      //     id: utilService.makeId(),
-      //     type: 'note-txt',
-      //     isPinned: false,
-      //     info: {
-      //         title: '',
-      //         txt: 'blah blah blah'
-      //     },
-      //     style: { 'background-color': '#ffffff' },
-      //     label: [],
-      // },
+      {
+          id: utilService.makeId(),
+          type: 'note-img',
+          isPinned: false,
+          info: {
+              title: '',
+              url: 'https://miro.medium.com/max/1050/1*80PmaIWGzskApKLQ_uSpZg.png'
+          },
+          style: { 'background-color': '#aecbfa' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: false,
+          info: {
+              title: '',
+              txt: 'Proggrammer - A machine that turns coffee into code'
+          },
+          style: { 'background-color': '#fff475' },
+          label: [],
+      },
+      {
+          id: utilService.makeId(),
+          type: 'note-txt',
+          isPinned: false,
+          info: {
+              title: '',
+              txt: 'blah blah blah'
+          },
+          style: { 'background-color': '#ffffff' },
+          label: [],
+      },
   ];
 }
 
