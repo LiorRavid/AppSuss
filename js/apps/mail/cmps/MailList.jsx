@@ -1,7 +1,7 @@
 import { MailPreview } from './MailPreview.jsx'
 
 export function MailList({ mails }) {
-    // no cars for show
+    // no mails for show
     if (!mails.length) return <h1>There are no mails to show</h1>
     return (
         <section className="mail-list">

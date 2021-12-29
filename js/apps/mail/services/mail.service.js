@@ -1,8 +1,11 @@
+import { storageService } from '../../../services/storage.service.js'
 export const MailService = {
     getEmailById,
     query,
 
 }
+
+const KEY = 'mailDB';
 const loggedinUser = {
     email: 'user@appsus.com',
     fullname: 'Mahatma Appsus'
@@ -34,6 +37,8 @@ const emails = [{
     }
 ]
 
+_createMails()
+
 const criteria = {
     status: 'inbox/sent/trash/draft',
     txt: 'puki',
@@ -51,25 +56,19 @@ function query(filterBy = null) {
     const mails = _loadMailsFromStorage()
     if (!filterBy) return Promise.resolve(mails)
     const filteredMails = _getFilteredMails(mails, filterBy)
-    // return Promise.resolve(filteredMails)
-    return 'null'
+    return Promise.resolve(filteredMails)
 
 }
-// return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
-// function _createMails() {
-//     var mails = _loadMailsFromStorage()
-//     if (!mails || !mails.length) {
-//         mails = []
-//         gVendors.forEach(vendor => {
-//             const carToSave = { vendor }
-//             cars.push(_createCar(carToSave))
-//         })
-//     }
-//     _saveCarsToStorage(cars);
-// }
+function _createMails() {
+    let mails = _loadMailsFromStorage();
+    if (!mails || !mails.length) {
+      mails = emails;
+    }
+    _saveMailsToStorage(mails);
+  }
 
-function _saveMailsToStorage(cars) {
-    storageService.saveToStorage(KEY, cars)
+function _saveMailsToStorage(mails) {
+    storageService.saveToStorage(KEY, mails)
 }
 
 function _loadMailsFromStorage() {

@@ -1,8 +1,8 @@
 
 const { Link } = ReactRouterDOM
-import { MailPreview } from './cmps/MailPreview.jsx'
 import { Loader } from './cmps/Loader.jsx'
-import { mailService } from './services/mail.service.js'
+import { MailService } from './services/mail.service.js'
+import { MailList } from './cmps/MailList.jsx'
 export class MailApp extends React.Component {
 
     state = {
@@ -12,15 +12,16 @@ export class MailApp extends React.Component {
 
     componentDidMount() {
         this.loadMails()
+        
     }
 
     loadMails = () => {
-        const { filterBy } = this.state
-        mailService.query(filterBy).then(mails => {
-            eventBusService.emit('mails-count', mails.length)
-            this.setState({ mails})
-        })
-    }
+        const { filterBy } = this.state;
+        MailService.query(filterBy).then((mails) => {
+          this.setState({ mails });
+        });
+      };
+    
 
     get ctgSearchParam() {
         const urlSearchParams = new URLSearchParams(this.props.location.search)
@@ -40,8 +41,11 @@ export class MailApp extends React.Component {
         if (!mails) return <Loader />
         return (
             <section className='mail-app'>
-                <MailList mails= {this.mailsToDisplay}/>
-                {<MailPreview />}
+                {/* <SideBar /> */}
+                <MailList mails= {mails}/>
+
+                
+                
 
             </section>
         )
