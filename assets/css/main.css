@@ -6,8 +6,13 @@
 @import '../css/parts/layout.css';
 
 /* CMPS */
+/* common pages */
 @import '../css/cmps/app-header.css';
 @import '../css/cmps/app-footer.css';
+
+/* app cmps */
+@import '../css/apps/keep/cmps/note-preview.css';
+@import '../css/apps/keep/cmps/note-list.css';
 
 /* PAGES */
 /* common pages */

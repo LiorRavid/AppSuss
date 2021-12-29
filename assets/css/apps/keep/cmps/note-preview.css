@@ -1,0 +1,21 @@
+
+.note-preview-container:hover {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 2px 15px rgb(0 0 0 / 30%);
+}
+
+.note-preview-container {
+    position: relative;
+}
+
+.note-preview-container:hover .btn-note-pin {
+    display: block;
+}
+
+iframe {
+    transform: translate3d(0, 0, 0);
+    width: 100%;
+}
+
+.note-preview img {
+    width: 100%;
+}

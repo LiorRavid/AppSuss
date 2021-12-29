@@ -1,0 +1,29 @@
+
+.note-list-ul {
+    column-count: 5;
+    padding-top: 20px;
+    /* min-height: 500px; */
+    /* column-gap: 15px; */
+    column-width: 300px;
+    break-inside: avoid;
+    overflow: hidden;
+}
+
+.note-list-ul>li {
+    break-inside: avoid;
+    display: inline-block;
+    border: 0.8px solid lightgray;
+    border-radius: 0.5rem;
+    width: 330px;
+    padding: 10px;
+    margin-bottom: 20px;
+    z-index: 0;
+}
+
+.min-height-ul {
+    min-height: 400px;
+}
+
+.min-height-ul-pinned {
+    min-height: 200px;
+}
