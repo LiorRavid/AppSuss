@@ -12,7 +12,7 @@ export class NotePreview extends React.Component{
         const{noteType} = this.state
         const{note} = this.props
         return (
-                <article className='note-preview' >
+                <article className='note-preview'>
                     <DynamicCmp type={noteType} note={note}/>
                 </article>
         )
