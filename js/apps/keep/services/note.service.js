@@ -4,6 +4,7 @@ import { storageService } from '../../../services/storage.service.js';
 export const noteService = {
     query,
     removeNote,
+    addNote,
 };
 
 const STORAGE_KEY = 'noteDB';
@@ -167,6 +168,18 @@ function removeNote(noteId) {
     return Promise.resolve()
 }
 
+function addNote(type, value) {
+    let notes = _loadNotesFromStorage()
+    let newNote = _createBasicNote(type);
+    if (type === 'note-txt') newNote.info['txt'] = value;
+    else if (type === 'note-video' || type === 'note-img') newNote.info['url'] = value;
+    else if (type === 'note-todos') newNote.info['todos'] = value;
+    notes = [newNote, ...notes];
+    _saveNotesToStorage(notes);
+    return Promise.resolve();
+}
+
+
 function _getFilteredNotes(notes, filterBy) {
     let { vendor, minSpeed, maxSpeed } = filterBy
     minSpeed = minSpeed ? minSpeed : 0
@@ -183,6 +196,21 @@ function _createNotes() {
         _saveNotesToStorage(notes);
     }
     return notes;
+}
+
+function _createBasicNote(type) {
+    return {
+        id: utilService.makeId(),
+        type: type,
+        isPinned: false,
+        info: {
+            title: '',
+        },
+        style: {
+            backgroundColor: 'white'
+        },
+        label: [],
+    }
 }
 
 function _saveNotesToStorage(notes) {
