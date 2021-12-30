@@ -9,7 +9,7 @@ export class MailApp extends React.Component {
     state = {
         mails: null,
         filterBy: null,
-        newMail: false,
+        isNewMail: false,
     }
 
     componentDidMount() {
@@ -44,16 +44,26 @@ export class MailApp extends React.Component {
 
     onNewMail = () => {
 
-        this.setState({newMail: true})
 
-        console.log('jaja:', this.state.newMail)
-
-    }
-    
-    handleSubmit = (form)=> {
-        console.log(form)
+        this.setState({ isNewMail: true });
 
     }
+
+    handleSubmit = (form) => {
+        form.preventDefault()
+        this.setState({ isNewMail: false })
+        const to = form.target.to.value
+        const subject = form.target.subject.value
+        const body = form.target.body.value
+        MailService.addMail(to, subject, body).then(() => {
+            eventBusService.emit('user-msg', { txt: 'add ma to the list!', type: 'success' })
+            this.setState({ mails: null })
+            
+            
+          })
+          loadMails()
+    }
+
 
 
 
@@ -63,10 +73,12 @@ export class MailApp extends React.Component {
         if (!mails) return <Loader />
         return (
             <section className='mail-app'>
-                {this.state.newMail = true &&
-                    <NewMail
-                    handleSubmit = {this.handleSubmit}
-                    />}
+
+                <NewMail
+                    show={this.state.isNewMail}
+                    prop={this.handleSubmit}
+
+                />
                 <SideBar
                     onNewMail={this.onNewMail}
                 />
@@ -80,9 +92,6 @@ export class MailApp extends React.Component {
 
             </section>
         )
-
-
-
 
     }
 }

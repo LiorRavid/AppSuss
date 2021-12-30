@@ -3,6 +3,7 @@ export const MailService = {
     getEmailById,
     query,
     removeMail,
+    addMail,
     
 
 }
@@ -51,6 +52,30 @@ const criteria = {
     // (optional property, if missing: show all) isStared: true, 
     // (optional property, if missing: show all) lables: ['important', 'romantic'] // has any of the labels 
 }
+
+function _createMail (to,subject,body) {
+const id =  Math.floor(Math.random() * 10000)
+const from = 'johny'
+const sentAt = Date.now()
+const newMail = {
+    id: id,
+    from: from,
+    subject: subject,
+    body: body,
+    isRead: false,
+    sentAt: sentAt,
+    to: to,
+}
+return newMail
+}
+function addMail(to,subject,body) {
+    let mails = _loadMailsFromStorage();
+    let newMail = _createMail(to,subject,body);
+    mails = [newMail, ...mails];
+    _saveMailsToStorage(mails);
+    return Promise.resolve();
+  }
+  
 
 function getEmailById(id) {
     const mailId = emails.find(email => email.id = id)
