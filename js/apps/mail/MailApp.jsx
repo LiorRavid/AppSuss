@@ -1,8 +1,8 @@
-
 const { Link } = ReactRouterDOM
 import { Loader } from './cmps/Loader.jsx'
 import { MailService } from './services/mail.service.js'
 import { MailList } from './cmps/MailList.jsx'
+import { SideBar } from './cmps/SideBar.jsx'
 export class MailApp extends React.Component {
 
     state = {
@@ -33,6 +33,13 @@ export class MailApp extends React.Component {
         const ctg = this.ctgSearchParam
         return cars.filter(car => !ctg || car.ctg === ctg)
     }
+    onRemoveMail = () => {
+        const { id } = this.state.mails;
+        MailService.removeMail(id).then(() => {
+          eventBusService.emit('user-msg', { txt: 'Book is removed!', type: 'danger'})
+          this.loadMails()
+        });
+      };
 
 
     render() {
@@ -41,8 +48,11 @@ export class MailApp extends React.Component {
         if (!mails) return <Loader />
         return (
             <section className='mail-app'>
-                {/* <SideBar /> */}
-                <MailList mails= {mails}/>
+                <SideBar />
+                <MailList
+                 mails= {mails} 
+                 onRemoveMail = {this.onRemoveMail}
+                />
 
                 
                 
