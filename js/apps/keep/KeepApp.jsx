@@ -1,5 +1,6 @@
 import { NoteList } from './cmps/NoteList.jsx'
 import {noteService} from './services/note.service.js'
+import { eventBusService } from '../../services/event-bus.service.js';
 
 const { Link } = ReactRouterDOM
 export class KeepApp extends React.Component {
@@ -20,11 +21,24 @@ export class KeepApp extends React.Component {
         })
     }
 
+    onRemoveNote = (id) => {
+        noteService.removeNote(id)
+            .then(() => {
+                console.log('success');
+                eventBusService.emit('user-msg', {txt: 'Deleted succesfully',type: 'success'});
+                this.loadNotes();
+            })
+            .catch(err => {
+                console.log('err', err);
+                eventBusService.emit('user-msg', {txt: 'Error. Please try later',type: 'error'})
+            });
+    }
+
     render (){
         const { notes } = this.state
         if (!notes) return <React.Fragment></React.Fragment>
         return <section className='keep-app'>
-            <NoteList notes={notes}/>
+            <NoteList notes={notes} remove={this.onRemoveNote}/>
         </section>
     }
 }

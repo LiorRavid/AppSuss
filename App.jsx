@@ -7,7 +7,7 @@ import { KeepApp } from './js/apps/keep/KeepApp.jsx'
 // import { NoteDetails } from './pages/NoteDetails.jsx'
 // import { NoteEdit } from './pages/NoteEdit.jsx'
 
-// import { UserMsg } from './js/cmps/UserMsg.jsx'
+import { UserMsg } from './js/cmps/UserMsg.jsx'
 import { AppHeader } from './js/cmps/AppHeader.jsx'
 import { AppFooter } from './js/cmps/AppFooter.jsx'
 
@@ -36,7 +36,7 @@ export function App() {
                 </main>
                 <AppFooter />
             </section>
-            {/* <UserMsg /> */}
+            <UserMsg />
         </Router>
     );
 }

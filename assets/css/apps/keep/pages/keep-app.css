@@ -1,4 +1,8 @@
 .keep-app {
     font-family: lato;
-    text-align: center;
+    margin: 0 20px;
+}
+
+.keep-app pre {
+    font-family: lato;
 }
