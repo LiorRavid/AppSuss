@@ -1,6 +1,10 @@
-import { NoteList } from './cmps/NoteList.jsx'
+
 import {noteService} from './services/note.service.js'
 import { eventBusService } from '../../services/event-bus.service.js';
+
+import { NoteList } from './cmps/NoteList.jsx'
+import { NoteAdd } from './cmps/NoteAdd.jsx';
+
 
 const { Link } = ReactRouterDOM
 export class KeepApp extends React.Component {
@@ -38,6 +42,7 @@ export class KeepApp extends React.Component {
         const { notes } = this.state
         if (!notes) return <React.Fragment></React.Fragment>
         return <section className='keep-app'>
+            <NoteAdd loadNotes ={this.loadNotes}></NoteAdd>
             <NoteList notes={notes} remove={this.onRemoveNote}/>
         </section>
     }

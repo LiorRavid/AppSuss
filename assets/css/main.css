@@ -13,8 +13,10 @@
 
 /* App Cmps*/ 
 /* keep */
-@import '../css/apps/keep/cmps/note-preview.css';
 @import '../css/apps/keep/cmps/note-list.css';
+@import '../css/apps/keep/cmps/note-add.css';
+@import '../css/apps/keep/cmps/note-preview.css';
+
 
 /* mail */
 @import '../css/apps/mail/pages/cmps/mailList.css';
