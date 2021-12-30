@@ -33,6 +33,13 @@ export class MailApp extends React.Component {
         const ctg = this.ctgSearchParam
         return cars.filter(car => !ctg || car.ctg === ctg)
     }
+    onRemoveMail = () => {
+        const { id } = this.state.mails;
+        MailService.removeMail(id).then(() => {
+          eventBusService.emit('user-msg', { txt: 'Book is removed!', type: 'danger'})
+          this.loadMails()
+        });
+      };
 
 
     render() {
@@ -42,7 +49,10 @@ export class MailApp extends React.Component {
         return (
             <section className='mail-app'>
                 <SideBar />
-                <MailList mails= {mails}/>
+                <MailList
+                 mails= {mails} 
+                 onRemoveMail = {this.onRemoveMail}
+                />
 
                 
                 

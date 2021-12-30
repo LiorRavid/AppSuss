@@ -2,6 +2,7 @@ import { storageService } from '../../../services/storage.service.js'
 export const MailService = {
     getEmailById,
     query,
+    
 
 }
 
@@ -13,27 +14,30 @@ const loggedinUser = {
 
 const emails = [{
         id: 'e101',
+        from: 'helena',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     },
     {
         id: 'e102',
+        from: 'eyal',
         subject: 'love you',
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     },
     {
         id: 'e103',
+        from: 'cat',
         subject: 'meow!',
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     }
 ]
 
@@ -61,7 +65,8 @@ function query(filterBy = null) {
 }
 function _createMails() {
     let mails = _loadMailsFromStorage();
-    if (!mails || !mails.length) {
+    if (!mails || !mails.length) 
+    {
       mails = emails;
     }
     _saveMailsToStorage(mails);
