@@ -2,6 +2,7 @@ import { storageService } from '../../../services/storage.service.js'
 export const MailService = {
     getEmailById,
     query,
+    removeMail,
     
 
 }
@@ -55,6 +56,13 @@ function getEmailById(id) {
     const mailId = emails.find(email => email.id = id)
     return mailId
 }
+
+function removeMail(id) {
+    let mails = _loadMailsFromStorage();
+    mails = mails.filter((mail) => mail.id !== id);
+    _saveMailsToStorage(mails);
+    return Promise.resolve();
+  }
 
 function query(filterBy = null) {
     const mails = _loadMailsFromStorage()

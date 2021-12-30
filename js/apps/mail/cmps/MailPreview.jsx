@@ -1,6 +1,6 @@
 const { Link } = ReactRouterDOM
 
-export function MailPreview({ mail, onRemoveMail}) {
+export function MailPreview({ mail, onRemoveMail }) {
     const calcDate = () => {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let date = new Date(mail.sentAt)
@@ -19,7 +19,7 @@ export function MailPreview({ mail, onRemoveMail}) {
 
             </article>
             <article className="mail-buttons">
-                <button className='button' onClick = {()=>onRemoveMail(mail.id)} >delete</button>
+                <button className='button' onClick={() => onRemoveMail(mail.id)} >delete</button>
                 <button className='button'>view</button>
                 <button className='button'>star</button>
             </article>

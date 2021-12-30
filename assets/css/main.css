@@ -20,6 +20,7 @@
 @import '../css/apps/mail/pages/cmps/mailList.css';
 @import '../css/apps/mail/pages/cmps/sidebar.css';
 @import '../css/apps/mail/pages/cmps/mailpreview.css';
+@import '../css/apps/mail/pages/cmps/newMail.css';
 
 
 
@@ -34,5 +35,6 @@
 
 /* mail */
 @import '../css/apps/mail/pages/mail-app.css';
+
 
 
