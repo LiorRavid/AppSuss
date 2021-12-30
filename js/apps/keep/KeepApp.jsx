@@ -1,8 +1,8 @@
 
-import {noteService} from './services/note.service.js'
+import {noteService} from './services/note.service.js';
 import { eventBusService } from '../../services/event-bus.service.js';
 
-import { NoteList } from './cmps/NoteList.jsx'
+import { NoteList } from './cmps/NoteList.jsx';
 import { NoteAdd } from './cmps/NoteAdd.jsx';
 
 
@@ -38,12 +38,19 @@ export class KeepApp extends React.Component {
             });
     }
 
+    onUpdateColor = (id, color)=> {
+        noteService.updateNoteStyle(id, 'backgroundColor', color)
+            .then(() => {
+                this.loadNotes();
+            });
+    }
+
     render (){
         const { notes } = this.state
         if (!notes) return <React.Fragment></React.Fragment>
         return <section className='keep-app'>
             <NoteAdd loadNotes ={this.loadNotes}></NoteAdd>
-            <NoteList notes={notes} remove={this.onRemoveNote}/>
+            <NoteList notes={notes} remove={this.onRemoveNote} onUpdateColor={this.onUpdateColor}/>
         </section>
     }
 }

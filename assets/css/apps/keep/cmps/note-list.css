@@ -37,7 +37,7 @@
     display: inline-block;
 }
 
-/* .color-dropdown {
+.color-dropdown {
     position: absolute;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -63,7 +63,7 @@
 
 .color-dropdown div:hover {
     border: 1px solid black;
-} */
+}
 
 .btn-note-color span {
     position: absolute;
