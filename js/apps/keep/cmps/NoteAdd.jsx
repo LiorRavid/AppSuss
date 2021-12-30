@@ -7,7 +7,6 @@ export class NoteAdd extends React.Component {
         placeHolder: 'Whats on your mind?',
         chosenNoteType: 'note-txt',
         value: '',
-        x: null,
     }
 
     handleChange = ({ target }) => {
@@ -24,17 +23,26 @@ export class NoteAdd extends React.Component {
         ev.preventDefault();
         const {chosenNoteType,value} = this.state
         if (chosenNoteType === 'note-todos') {
-            this.setState({value: {...this.makeTodo}});
-        }
+            const todoValue = this.makeTodo()
+            console.log(todoValue)
+            this.setState((prevState)=> ({...prevState, value: [...todoValue]}), ()=> {this.NoteAdd()});
+        }else this.NoteAdd()
+    }
+
+    NoteAdd = ()=>{
+        console.log('value',this.state.value)
+        console.log('value',this.state.chosenNoteType)
+        const {chosenNoteType,value} = this.state
         noteService.addNote(chosenNoteType, value).then(note => {
             this.props.loadNotes();
-            this.setState({value:''});
+            this.setState((prevState)=> ({...prevState, value: ''}));
             eventBusService.emit('user-msg', {txt: 'Added succesfully',type: 'success'});
         });
     }
 
     makeTodo = ()=> {
         let list = this.state.value.split(',');
+        console.log('list',list)
         return list.map(item => {
             return { txt: item, isChecked: false };
         });

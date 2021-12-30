@@ -8,7 +8,6 @@ export class NotePreview extends React.Component{
     }
 
     render(){
-        console.log('props',this.props)
         const{noteType} = this.state
         const{note} = this.props
         return (
