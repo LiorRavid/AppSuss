@@ -3,7 +3,19 @@ import { NotePreview } from './NotePreview.jsx'
 
 const { Link } = ReactRouterDOM
 
-export function NoteList({ notes,remove }) {
+export class NoteList extends React.Component {
+
+    state = {
+        colors: [
+            '#ffffff', '#fff475', '#fbbc04', '#f28b82', '#aecbfa',
+            '#cbf0f8', '#a7ffeb', '#ccff90', '#e8eaed', '#e6c9a8', '#fdcfe8', '#d7aefb'
+        ],
+    }
+
+    render(){
+        const{notes,remove,onUpdateColor} = this.props
+        const{colors} = this.state
+    
     return (
         <section className="note-list">
             <ul className="note-list-ul clean-list ">
@@ -15,7 +27,9 @@ export function NoteList({ notes,remove }) {
                             <section className="flex">
                                 <button className="btn-note-delete btn-note" onClick = {()=> remove(note.id)}></button>
                                 <div className="btn-note-color btn-note"><span></span>
-                                    <div className="color-dropdown flex" ></div>
+                                    <div className="color-dropdown flex" >
+                                        {colors.map((color,idx)=> {return <div onClick ={()=>onUpdateColor(note.id,color)} style={{backgroundColor: color}} key={color}></div>})}
+                                    </div>
                                 </div>
                                 <button className="btn-note-copy btn-note"></button>
                                 <Link to="'/keep/'+note.id"><button className="btn-note-edit btn-note"></button></Link>
@@ -26,5 +40,6 @@ export function NoteList({ notes,remove }) {
                     }
             </ul>
         </section>
-    )
+        )
+    }
 }

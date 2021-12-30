@@ -5,6 +5,8 @@ export const noteService = {
     query,
     removeNote,
     addNote,
+    updateNoteStyle,
+    getNoteById,
 };
 
 const STORAGE_KEY = 'noteDB';
@@ -177,6 +179,24 @@ function addNote(type, value) {
     notes = [newNote, ...notes];
     _saveNotesToStorage(notes);
     return Promise.resolve();
+}
+
+function updateNoteStyle(noteId, property, value) {
+    const notes = _loadNotesFromStorage()
+    let noteIdx = notes.findIndex(function (note) {
+        return note.id === noteId;
+    })
+    notes[noteIdx].style[property] = value;
+    _saveNotesToStorage(notes);
+    return Promise.resolve();
+}
+
+function getNoteById(noteId) {
+    const notes = _loadNotesFromStorage()
+    var note = notes.find(function (note) {
+        return noteId === note.id
+    })
+    return Promise.resolve(note)
 }
 
 
