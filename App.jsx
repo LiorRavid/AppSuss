@@ -28,7 +28,7 @@ export function App() {
                         {/* <Route component={NoteEdit} path="keep/edit/:noteId"/> */}
                         {/* <Route component={NoteDetails} path="/keep/note/:noteId" /> } */}
                         <Route component={KeepApp} path="/keep" />
-                        <Route component={OpenMail} path="/mail/:mailId " />
+                        <Route component={OpenMail} path="/mail/:mailId" />
                         <Route component={MailApp} path="/mail" />
                         <Route component={AppAbout} path="/about" />
                         <Route component={AppHome} path="/" />

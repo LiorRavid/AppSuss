@@ -1,27 +1,41 @@
-import React from 'react'
+
 import { noteService } from '../../services/note.service.js'
 
 
 export class NoteTodo extends React.Component {
 
     state={
-        isShown:null
+        isChecked:this.props.todo.isChecked,
+        note: null
     }
 
-    render(){
-        const{note} = this.props
+    someInputRef = React.createRef()
 
+    componentDidMount(){
+        const{note,todo} = this.props
+        this.someInputRef.current.checked = todo.isChecked
+        this.setState({note,isChecked:todo.isChecked}
+        )
+
+    }
+
+    handleChange = (noteId,todoIdx)=>{
+        noteService.updateNoteTodo(noteId, todoIdx,this.someInputRef.current.checked).then((note)=>{
+            this.setState({note,isChecked:this.someInputRef.current.checked})
+        });
+    }
+
+
+    render(){
+        const{note,todo,idx} = this.props
+        const{isChecked} = this.state
+        if (!note) return <React.Fragment></React.Fragment>
+        console.log('render')
         return (
-            <React.Fragment>
-                {note.info.todos.map((todo,idx)=>{
-                    return (
-                        <li key={idx}>
-                            <input  type="checkbox" name={idx} onChange={()=>this.handleChange(note.id,idx,todo)}/>
-                            <label htmlFor = {idx} className={todo.isChecked ?'checked': 'unchecked'}>{todo.txt}</label>
-                        </li>
-                        ) 
-                })}
-            </React.Fragment>       
+            <li key={idx}>
+                <input  ref={this.someInputRef} type="checkbox" name={idx} onChange={()=>this.handleChange(note.id,idx)}/>
+                <label htmlFor = {idx} className={isChecked ?'checked': 'unchecked'}>{todo.txt}</label>
+            </li>      
         )
 
     }

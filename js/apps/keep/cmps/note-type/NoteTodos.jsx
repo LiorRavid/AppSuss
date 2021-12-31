@@ -12,15 +12,12 @@ export class NoteTodos extends React.Component {
     }
 
     loadNote = () => {
+        console.log
         const { note } = this.props
-        this.setState({...this.state, note })
+        this.setState({note})
     }
 
-    handleChange = (noteId,todoIdx,todo)=>{
-        noteService.updateNoteTodo(noteId, todoIdx, todo.isChecked).then((note)=>{
-            this.setState({note})
-        });
-    }
+
 
     render(){
         const{note} = this.props
@@ -29,21 +26,17 @@ export class NoteTodos extends React.Component {
             <div>
                 <h3>{note.info.title}</h3>
                 <ul className="todos-container clean-list">
-                    <NoteTodo note={note}/>
-                    {/* { {note.info.todos.map((todo,idx)=>{
-                        return (
-                            <li key={idx}>
-                                <input  type="checkbox" name={idx} onChange={()=>this.handleChange(note.id,idx,todo)}/>
-                                <label htmlFor = {idx} className={todo.isChecked ?'checked': 'unchecked'}>{todo.txt}</label>
-                            </li>
-                            ) 
-                    })}  }       */}
+                {note.info.todos.map((todo,idx)=>{
+                    return <NoteTodo  key={idx} note={note} todo={todo} idx={idx} loadNote={this.loadNote}/>
+                })}
                 </ul>
             </div>
         )
     }
 
 }
+
+
 
 
 

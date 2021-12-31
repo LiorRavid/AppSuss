@@ -193,11 +193,16 @@ function updateNoteStyle(noteId, property, value) {
 }
 
 function updateNoteTodo(noteIdx, todoIdx, value) {
+    console.log('noteIdx after',noteIdx)
+    console.log('todoIdx after',todoIdx)
+    console.log('value',value)
     const notes = _loadNotesFromStorage()
     let Idx = notes.findIndex(function (note) {
         return note.id === noteIdx;
     })
+    console.log('noteIdx',Idx)
     notes[Idx].info.todos[todoIdx].isChecked = value;
+    console.log('notes[Idx].info.todos[todoIdx]',notes[Idx].info.todos[todoIdx]);
     _saveNotesToStorage(notes);
     return Promise.resolve(notes[Idx]);
 }
