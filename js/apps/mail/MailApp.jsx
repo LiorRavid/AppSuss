@@ -18,6 +18,7 @@ export class MailApp extends React.Component {
     }
 
     loadMails = () => {
+        console.log("afterClick")
         const { filterBy } = this.state;
         MailService.query(filterBy).then((mails) => {
             this.setState({ mails });
@@ -37,7 +38,6 @@ export class MailApp extends React.Component {
     }
     onRemoveMail = (id) => {
         MailService.removeMail(id).then(() => {
-            //   eventBusService.emit('user-msg', { txt: 'mail is removed!', type: 'danger'})
             this.loadMails()
         });
     };
@@ -51,7 +51,6 @@ export class MailApp extends React.Component {
     closeCompose = () => {
         this.setState( {isNewMail: false})
     }
-    // onMailDetails = 
 
     handleSubmit = (form) => {
         form.preventDefault()
@@ -59,9 +58,10 @@ export class MailApp extends React.Component {
         const subject = form.target.subject.value
         const body = form.target.body.value
         MailService.addMail(to, subject, body).then(() => {
-            // eventBusService.emit('user-msg', { txt: 'add ma to the list!', type: 'success' })
-            this.setState({mails: '1', isNewMail: false})
-          })
+            this.setState({mails: null , isNewMail: false},()=> this.loadMails())
+          }
+          )
+          
 
 
 
@@ -89,7 +89,7 @@ export class MailApp extends React.Component {
                 <MailList
                     mails={mails}
                     onRemoveMail={this.onRemoveMail}
-                    detaild= {this.onMailDetails}
+                    
                 />
 
 

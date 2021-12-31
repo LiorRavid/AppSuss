@@ -12,6 +12,7 @@ export function MailList({ mails, onRemoveMail }) {
                     key={mail.id}
                     mail={mail}
                     onRemoveMail={onRemoveMail} />)}
+                    
         </section>
     )
 }
