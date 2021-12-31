@@ -5,7 +5,6 @@ export function NoteVideo({ note }) {
             if (((note.info.url).toLowerCase()).includes('watch')) {
                 let idx = note.info.url.indexOf('v=');
                 let str = note.info.url.substring(idx + 2);
-                console.log('https://www.youtube.com/embed/' + str);
                 return 'https://www.youtube.com/embed/' + str;
             }
         }

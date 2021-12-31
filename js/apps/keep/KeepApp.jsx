@@ -19,6 +19,12 @@ export class KeepApp extends React.Component {
         this.loadNotes()
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.match.params !== this.props.match.params) {
+            this.loadNotes()
+        }
+    }
+
     loadNotes = () => {
         const { filterBy } = this.state
         noteService.query(filterBy).then(notes => {
