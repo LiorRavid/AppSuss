@@ -9,7 +9,6 @@ export class NotePreview extends React.Component{
     }
 
     render(){
-        console.log('render');
         const{noteType} = this.state
         const{note,onUpdateCheck} = this.props
         return (

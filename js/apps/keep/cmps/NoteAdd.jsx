@@ -24,14 +24,11 @@ export class NoteAdd extends React.Component {
         const {chosenNoteType,value} = this.state
         if (chosenNoteType === 'note-todos') {
             const todoValue = this.makeTodo()
-            console.log(todoValue)
             this.setState((prevState)=> ({...prevState, value: [...todoValue]}), ()=> {this.NoteAdd()});
         }else this.NoteAdd()
     }
 
     NoteAdd = ()=>{
-        console.log('value',this.state.value)
-        console.log('value',this.state.chosenNoteType)
         const {chosenNoteType,value} = this.state
         noteService.addNote(chosenNoteType, value).then(note => {
             this.props.loadNotes();
@@ -42,7 +39,6 @@ export class NoteAdd extends React.Component {
 
     makeTodo = ()=> {
         let list = this.state.value.split(',');
-        console.log('list',list)
         return list.map(item => {
             return { txt: item, isChecked: false };
         });

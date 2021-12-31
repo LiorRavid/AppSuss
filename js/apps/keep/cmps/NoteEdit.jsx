@@ -21,14 +21,18 @@ export class NoteEdit extends React.Component {
     }
 
     componentDidMount(){
+        this.loadNoteToEdit()
+    }
+
+    loadNoteToEdit = ()=>{
         const { noteId } = this.props.match.params;
         noteService. getNoteById(noteId)
             .then(note => {
-                this.setState({note},()=>this.loadEditNote())
+                this.setState({note},()=>this.loadEditInputs())
             });
-    }
+    } 
 
-    loadEditNote = ()=>{
+    loadEditInputs = ()=>{
         const{note,inputs} = this.state
         const{title} = inputs
         setTimeout(() => {
@@ -63,6 +67,26 @@ export class NoteEdit extends React.Component {
         if(name==='title')
         this.setState({title:value})
 
+    }
+
+    onRemoveNote = (id) => {
+        noteService.removeNote(id)
+            .then(() => {
+                console.log('success');
+                eventBusService.emit('user-msg', {txt: 'Deleted succesfully',type: 'success'});
+                this.props.history.push('/keep');
+            })
+            .catch(err => {
+                console.log('err', err);
+                eventBusService.emit('user-msg', {txt: 'Error. Please try later',type: 'error'})
+            });
+    }
+
+    onUpdateColor = (id, color)=> {
+        noteService.updateNoteStyle(id, 'backgroundColor', color)
+            .then(() => {
+                this.loadNoteToEdit()
+            });
     }
 
 
@@ -108,7 +132,7 @@ export class NoteEdit extends React.Component {
                         <input type="text" value={inputs['note-video']} name="video" onChange={()=>this.handleChange}/>
                     </div>}
                     <div className="edit-bar flex justify-between">
-                        <NoteEditTool note={note}/>
+                        <NoteEditTool note={note} onUpdateColor={this.onUpdateColor} onRemoveNote={this.onRemoveNote}/>
                         <button className="btn-note-detail-save btn-note " onClick={this.saveNote}></button>
                     </div>
                 </div>
