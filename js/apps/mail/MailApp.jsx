@@ -59,7 +59,6 @@ export class MailApp extends React.Component {
             this.setState({mails: null , isNewMail: false},()=> this.loadMails())
           }
           )
-          
 
 
 

@@ -1,5 +1,5 @@
 import { noteService } from '../../services/note.service.js'
-
+import { NoteTodo } from './NoteToDo.jsx'
 
 export class NoteTodos extends React.Component {
 
@@ -29,14 +29,15 @@ export class NoteTodos extends React.Component {
             <div>
                 <h3>{note.info.title}</h3>
                 <ul className="todos-container clean-list">
-                    {note.info.todos.map((todo,idx)=>{
+                    <NoteTodo note={note}/>
+                    {/* { {note.info.todos.map((todo,idx)=>{
                         return (
                             <li key={idx}>
                                 <input  type="checkbox" name={idx} onChange={()=>this.handleChange(note.id,idx,todo)}/>
                                 <label htmlFor = {idx} className={todo.isChecked ?'checked': 'unchecked'}>{todo.txt}</label>
                             </li>
                             ) 
-                    })}       
+                    })}  }       */}
                 </ul>
             </div>
         )
