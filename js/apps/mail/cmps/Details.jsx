@@ -1,6 +1,6 @@
-export function Details( {show},{mails}) {
-    console.log('mail:', mails);
+export function Details( {show , mails}) {
     
+
     if (!show)
     {
         return null
@@ -12,7 +12,6 @@ export function Details( {show},{mails}) {
                          
             <h4>{mails.sender}</h4>
             <h4>{mails.body}</h4>
-            
         </div>
        ) 
     }
