@@ -4,9 +4,10 @@ import { eventBusService } from '../../services/event-bus.service.js';
 
 import { NoteList } from './cmps/NoteList.jsx';
 import { NoteAdd } from './cmps/NoteAdd.jsx';
+import { NoteEdit } from './cmps/NoteEdit.jsx';
 
 
-const { Link } = ReactRouterDOM
+const { Link,Route } = ReactRouterDOM
 export class KeepApp extends React.Component {
 
     state = {
@@ -45,12 +46,14 @@ export class KeepApp extends React.Component {
             });
     }
 
+
     render (){
         const { notes } = this.state
         if (!notes) return <React.Fragment></React.Fragment>
         return <section className='keep-app'>
             <NoteAdd loadNotes ={this.loadNotes}></NoteAdd>
-            <NoteList notes={notes} remove={this.onRemoveNote} onUpdateColor={this.onUpdateColor}/>
+            <NoteList notes={notes} remove={this.onRemoveNote} onUpdateColor={this.onUpdateColor} loadNotes ={this.loadNotes}/>
+            <Route component={NoteEdit} path="/keep/:noteId" loadNotes ={this.loadNotes} onUpdateColor={this.onUpdateColor} remove={this.onRemoveNote}></Route>
         </section>
     }
 }

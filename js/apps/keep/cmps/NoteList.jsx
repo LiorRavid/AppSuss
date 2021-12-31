@@ -1,7 +1,8 @@
 
 import { NotePreview } from './NotePreview.jsx'
+import{NoteEdit} from './NoteEdit.jsx'
 
-const { Link } = ReactRouterDOM
+const { Link, Route } = ReactRouterDOM
 
 export class NoteList extends React.Component {
 
@@ -32,7 +33,7 @@ export class NoteList extends React.Component {
                                     </div>
                                 </div>
                                 <button className="btn-note-copy btn-note"></button>
-                                <Link to="'/keep/'+note.id"><button className="btn-note-edit btn-note"></button></Link>
+                                <Link to={`/keep/${note.id}`}><button className="btn-note-edit btn-note"></button></Link>
                                 <button className="btn-note-mail btn-note"></button>
                             </section>
                         </li>)}
@@ -43,3 +44,4 @@ export class NoteList extends React.Component {
         )
     }
 }
+

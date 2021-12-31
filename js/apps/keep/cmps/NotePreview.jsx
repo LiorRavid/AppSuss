@@ -8,19 +8,13 @@ export class NotePreview extends React.Component{
         isChecked: null
     }
 
-    updateCheck = (noteId,todoidx, todo)=> {
-        noteService.updateNoteTodo(noteId, todoidx, todo.isChecked).then(()=>{
-            this.setState({isChecked: !this.state.isChecked},()=>{console.log(this.state.isChecked)})
-        });
-    }
-
     render(){
         console.log('render');
         const{noteType} = this.state
-        const{note} = this.props
+        const{note,onUpdateCheck} = this.props
         return (
                 <article className='note-preview'>
-                    <DynamicCmp type={noteType} note={note} updateCheck={this.updateCheck}/>
+                    <DynamicCmp type={noteType} note={note}/>
                 </article>
         )
     }
