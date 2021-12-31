@@ -25,7 +25,11 @@
 }
 
 .mail-body{
-    height: 84%;
+    height: 79%;
 
     
+}
+
+.close-compose {
+    width: 100%
 }

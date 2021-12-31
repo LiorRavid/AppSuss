@@ -48,20 +48,23 @@ export class MailApp extends React.Component {
         this.setState({ isNewMail: true });
 
     }
+    closeCompose = () => {
+        this.setState( {isNewMail: false})
+    }
+    // onMailDetails = 
 
     handleSubmit = (form) => {
         form.preventDefault()
-        this.setState({ isNewMail: false })
         const to = form.target.to.value
         const subject = form.target.subject.value
         const body = form.target.body.value
         MailService.addMail(to, subject, body).then(() => {
-            eventBusService.emit('user-msg', { txt: 'add ma to the list!', type: 'success' })
-            this.setState({ mails: null })
-            
-            
+            // eventBusService.emit('user-msg', { txt: 'add ma to the list!', type: 'success' })
+            this.setState({mails: '1', isNewMail: false})
           })
-          loadMails()
+
+
+
     }
 
 
@@ -70,13 +73,14 @@ export class MailApp extends React.Component {
     render() {
         const { mails } = this.state
         //loader
-        if (!mails) return <Loader />
+        if (!mails) return <React.Fragment/>
         return (
             <section className='mail-app'>
 
                 <NewMail
                     show={this.state.isNewMail}
                     prop={this.handleSubmit}
+                    close = {this.closeCompose}
 
                 />
                 <SideBar
@@ -85,6 +89,7 @@ export class MailApp extends React.Component {
                 <MailList
                     mails={mails}
                     onRemoveMail={this.onRemoveMail}
+                    detaild= {this.onMailDetails}
                 />
 
 

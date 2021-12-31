@@ -21,7 +21,8 @@ const emails = [{
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        sender: 'helena@wow.com'
     },
     {
         id: 'e102',
@@ -30,7 +31,8 @@ const emails = [{
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        sender: 'eyal@awesome.com'
     },
     {
         id: 'e103',
@@ -39,7 +41,8 @@ const emails = [{
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        sender: 'catboy@meow.com'
     }
 ]
 
