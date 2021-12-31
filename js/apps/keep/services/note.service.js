@@ -199,7 +199,7 @@ function updateNoteTodo(noteIdx, todoIdx, value) {
     })
     notes[Idx].info.todos[todoIdx].isChecked = value;
     _saveNotesToStorage(notes);
-    return Promise.resolve();
+    return Promise.resolve(notes[Idx]);
 }
 
 function getNoteById(noteId) {

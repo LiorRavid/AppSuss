@@ -5,7 +5,7 @@ import { MailApp } from './js/apps/mail/MailApp.jsx'
 // import { MailEdit } from './pages/MailEdit.jsx'
 import { KeepApp } from './js/apps/keep/KeepApp.jsx'
 // import { NoteDetails } from './pages/NoteDetails.jsx'
-// import { NoteEdit } from './pages/NoteEdit.jsx'
+// import { NoteEdit } from './js/apps/keep/cmps/NoteEdit.jsx'
 
 import { UserMsg } from './js/cmps/UserMsg.jsx'
 import { AppHeader } from './js/cmps/AppHeader.jsx'
@@ -24,8 +24,8 @@ export function App() {
                 <AppHeader />
                 <main className="app-main-layout flex-grow">
                     <Switch>
-                        {/* <Route component={NoteEdit} path="keep/note/edit/:noteId?" />
-                        <Route component={NoteDetails} path="/keep/note/:noteId" /> */}
+                        {/* <Route component={NoteEdit} path="keep/edit/:noteId"/> */}
+                        {/* <Route component={NoteDetails} path="/keep/note/:noteId" /> } */}
                         <Route component={KeepApp} path="/keep" />
                         {/* <Route component={MailEdit} path="/mail/edit/:mailId?" />
                         <Route component={MailDetails} path="/mail/:mailId" /> */}
