@@ -1,5 +1,4 @@
 const { Link } = ReactRouterDOM
-import { Loader } from './cmps/Loader.jsx'
 import { MailService } from './services/mail.service.js'
 import { MailList } from './cmps/MailList.jsx'
 import { SideBar } from './cmps/SideBar.jsx'
@@ -18,7 +17,6 @@ export class MailApp extends React.Component {
     }
 
     loadMails = () => {
-        console.log("afterClick")
         const { filterBy } = this.state;
         MailService.query(filterBy).then((mails) => {
             this.setState({ mails });
@@ -91,10 +89,6 @@ export class MailApp extends React.Component {
                     onRemoveMail={this.onRemoveMail}
                     
                 />
-
-
-
-
             </section>
         )
 

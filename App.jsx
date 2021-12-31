@@ -1,6 +1,7 @@
 import { AppHome } from './js/pages/AppHome.jsx'
 import { AppAbout } from './js/pages/AppAbout.jsx'
 import { MailApp } from './js/apps/mail/MailApp.jsx'
+import { OpenMail } from './js/apps/mail/cmps/OpenMail.jsx'
 // import { MailDetails } from './pages/MailDetails.jsx'
 // import { MailEdit } from './pages/MailEdit.jsx'
 import { KeepApp } from './js/apps/keep/KeepApp.jsx'
@@ -27,8 +28,7 @@ export function App() {
                         {/* <Route component={NoteEdit} path="keep/edit/:noteId"/> */}
                         {/* <Route component={NoteDetails} path="/keep/note/:noteId" /> } */}
                         <Route component={KeepApp} path="/keep" />
-                        {/* <Route component={MailEdit} path="/mail/edit/:mailId?" />
-                        <Route component={MailDetails} path="/mail/:mailId" /> */}
+                        <Route component={OpenMail} path="/mail/:mailId " />
                         <Route component={MailApp} path="/mail" />
                         <Route component={AppAbout} path="/about" />
                         <Route component={AppHome} path="/" />

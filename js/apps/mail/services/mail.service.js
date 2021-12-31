@@ -38,7 +38,7 @@ const emails = [{
         id: 'e103',
         from: 'cat',
         subject: 'meow!',
-        body: 'Would love to catch up sometimes',
+        body: 'Would love to catch up sometimessagagawgrawrgawrbavav adgawrva agawvargaegaergaergaergaergaergaeragerag',
         isRead: false,
         sentAt: 1551133930594,
         to: 'user@appsus.com',

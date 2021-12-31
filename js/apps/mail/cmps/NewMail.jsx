@@ -1,4 +1,3 @@
-const { Link } = ReactRouterDOM
 export function NewMail({show , prop, close}) {
     if ( show == false){
     return null

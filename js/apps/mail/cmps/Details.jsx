@@ -1,5 +1,5 @@
-export function Details( {show , mails}) {
-    
+export function Details( {show , mail , defineBodyLength}) {
+    const { Link, Route } = ReactRouterDOM
 
     if (!show)
     {
@@ -9,9 +9,9 @@ export function Details( {show , mails}) {
     {
     return (
         <div className="details">
-                         
-            <h4>{mails.sender}</h4>
-            <h4>{mails.body}</h4>
+            <h6 className = 'details-sender'>sender: {mail.sender}</h6>
+            <h6 className = 'details-body'>{(defineBodyLength(mail.body, 80))}</h6>
+           <Link to={`/mail/${mail.id}`}><button className = 'expand-mail'>open</button></Link>
         </div>
        ) 
     }
