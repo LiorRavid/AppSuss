@@ -6,3 +6,89 @@
 .keep-app pre {
     font-family: lato;
 }
+
+/* Media queries */
+
+@media (max-width :1050px) {
+    .note-list-ul {
+        padding-top: 20px;
+        column-count: 3;
+        column-gap: 15px;
+        break-inside: avoid;
+        overflow: hidden;
+    }
+    .note-list-ul>li {
+        width: 300px;
+    }
+}
+
+@media (max-width :950px) {
+    .note-list-ul {
+        padding-top: 20px;
+        column-count: 2;
+    }
+    .note-list-ul>li {
+        width: 350px;
+    }
+}
+
+@media (max-width :740px) {
+    .note-list-ul {
+        padding-top: 20px;
+        column-count: 2;
+        column-gap: 15px;
+        break-inside: avoid;
+        overflow: hidden;
+    }
+    .note-list-ul>li {
+        width: 270px;
+    }
+    .note-filter {
+        position: static;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-top: 10px;
+        display: block;
+    }
+    .note-filter div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width :550px) {
+    .note-list-ul {
+        padding-top: 20px;
+        column-gap: 15px;
+        column-count: 1;
+        break-inside: avoid;
+        overflow: hidden;
+    }
+    .note-list-ul>li {
+        width: 100%;
+    }
+}
+
+@media (max-width :550px) {
+    .note-add div {
+        flex-direction: column;
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        bottom: 0;
+        background-color: whitesmoke;
+    }
+    .note-add input {
+        width: 250px;
+    }
+    .btn-add-todo {
+        display: block;
+        margin:auto;
+    }
+    .keep-app {
+        margin-bottom: 80px;
+    }
+}

@@ -1,6 +1,6 @@
 
-import { noteService } from './../services/note.service.js'
-import {eventBusService} from './../../../services/event-bus.service.js'
+import { noteService } from '../services/note.service.js'
+import {eventBusService} from '../../../services/event-bus.service.js'
 import { NoteEditTool } from './note-type/NoteEditTool.jsx' 
 
 
