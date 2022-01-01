@@ -1,6 +1,6 @@
 
-import { noteService } from '../services/note.service.js'
-import {eventBusService} from '../../../services/event-bus.service.js'
+import { noteService } from './../services/note.service.js'
+import {eventBusService} from './../../../services/event-bus.service.js'
 import { NoteEditTool } from './note-type/NoteEditTool.jsx' 
 
 
@@ -100,7 +100,6 @@ export class NoteEdit extends React.Component {
     addTodoInput= ()=> {
         const{inputs} = this.state
         let todos = [...inputs['note-todos']]
-        console.log(todos)
         let todo = { txt: ' ', isChecked: false }
         todos.push(todo)
         this.setState({inputs:{...inputs, ['note-todos']:todos}})
@@ -108,6 +107,39 @@ export class NoteEdit extends React.Component {
 
     onClose= ()=>{
         this.setState({note:null},()=> this.props.history.push('/keep'))
+    }
+
+    updateNoteToSave = ()=> {
+
+        const {note,inputs} = this.state;
+        const{info} = this.state.note
+        if (note.type === 'note-txt') {
+            this.setState({note:{...note, info:{...note.info, txt: inputs['note-txt'],title:inputs.title}}},()=>{
+                this.saveNote(note)})
+        }else if(note.type === 'note-img'){
+            this.setState({note:{...note, info:{...note.info, url: inputs['note-img'],title:inputs.title}}},()=>this.saveNote(this.state.note))
+        }else if(note.type === 'note-video') {
+            this.setState({note:{...note, info:{...note.info, url: inputs['note-video'],title:inputs.title}}},()=>this.saveNote(note))
+        }
+        else if (note.type === 'note-todos'){
+            let todos = [...inputs['note-todos']]
+            let filterTodos = todos.filter((todo => todo.txt !== ''))
+            this.setState({note:{...note,info:{...note.info, todos: filterTodos, title:inputs.title}}},()=>this.saveNote())
+        }
+    }
+
+
+    saveNote = ()=>{
+        noteService.saveEditNote(this.state.note)
+            .then(()=>{
+                    console.log('success');
+                    eventBusService.emit('user-msg', {txt: 'Updated succesfully',type: 'success'});
+                    this.props.history.push('/keep');
+                })
+                .catch(err => {
+                    console.log('err', err);
+                    eventBusService.emit('user-msg', {txt: 'Error. Please try later',type: 'error'})
+                });
     }
 
     
@@ -145,7 +177,7 @@ export class NoteEdit extends React.Component {
                     </div>}
                     <div className="edit-bar flex justify-between">
                         <NoteEditTool note={note} onUpdateColor={this.onUpdateColor} onRemoveNote={this.onRemoveNote}/>
-                        <button className="btn-note-detail-save btn-note " onClick={this.saveNote}></button>
+                        <button className="btn-note-detail-save btn-note " onClick={this.updateNoteToSave}></button>
                     </div>
                 </div>
             </section>

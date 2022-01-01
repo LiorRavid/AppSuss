@@ -1,6 +1,6 @@
 
 import {noteService} from './services/note.service.js';
-import { eventBusService } from '../../services/event-bus.service.js';
+import { eventBusService } from './../../services/event-bus.service.js';
 
 import { NoteList } from './cmps/NoteList.jsx';
 import { NoteAdd } from './cmps/NoteAdd.jsx';

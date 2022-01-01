@@ -1,5 +1,5 @@
 import { noteService } from './services/note.service.js'
-import { eventBusService } from '../../services/event-bus.service.js';
+import { eventBusService } from './../../services/event-bus.service.js';
 
 export class NoteAdd extends React.Component {
 
