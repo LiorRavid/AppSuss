@@ -1,6 +1,6 @@
 
-import { noteService } from './../services/note.service.js'
-import {eventBusService} from './../../../services/event-bus.service.js' 
+// import { noteService } from './../services/note.service.js'
+// import {eventBusService} from './../../../services/event-bus.service.js' 
 
 
 const { Link} = ReactRouterDOM
@@ -34,7 +34,7 @@ export class NoteEditTool extends React.Component {
                     </div>
                 </div>
                 
-                <button className="btn-note-copy btn-note"></button>
+                {/* <button className="btn-note-copy btn-note"></button> */}
             </section>
         )
     }

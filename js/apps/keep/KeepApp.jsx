@@ -52,13 +52,21 @@ export class KeepApp extends React.Component {
             });
     }
 
+    onCopyNote = (note)=>{
+        noteService.duplicateNote(note)
+            .then(()=>{
+                this.loadNotes();
+            }
+            );
+    }
+
 
     render (){
         const { notes } = this.state
         if (!notes) return <React.Fragment></React.Fragment>
         return <section className='keep-app'>
             <NoteAdd loadNotes ={this.loadNotes}></NoteAdd>
-            <NoteList notes={notes} remove={this.onRemoveNote} onUpdateColor={this.onUpdateColor} loadNotes ={this.loadNotes}/>
+            <NoteList notes={notes} remove={this.onRemoveNote} onUpdateColor={this.onUpdateColor} loadNotes ={this.loadNotes} onCopyNote={this.onCopyNote}/>
             <Route component={NoteEdit} path="/keep/:noteId" loadNotes ={this.loadNotes} onUpdateColor={this.onUpdateColor} remove={this.onRemoveNote}></Route>
         </section>
     }

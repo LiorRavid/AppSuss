@@ -1,6 +1,6 @@
 
 import { NotePreview } from './NotePreview.jsx'
-import{NoteEdit} from './NoteEdit.jsx'
+
 
 const { Link, Route } = ReactRouterDOM
 
@@ -14,7 +14,7 @@ export class NoteList extends React.Component {
     }
 
     render(){
-        const{notes,remove,onUpdateColor} = this.props
+        const{notes,remove,onUpdateColor,onCopyNote} = this.props
         const{colors} = this.state
     
     return (
@@ -32,7 +32,7 @@ export class NoteList extends React.Component {
                                         {colors.map((color,idx)=> {return <div onClick ={()=>onUpdateColor(note.id,color)} style={{backgroundColor: color}} key={color}></div>})}
                                     </div>
                                 </div>
-                                <button className="btn-note-copy btn-note"></button>
+                                <button className="btn-note-copy btn-note" onClick={()=>onCopyNote(note)}></button>
                                 <Link to={`/keep/${note.id}`}><button className="btn-note-edit btn-note"></button></Link>
                                 {/* <button className="btn-note-mail btn-note"></button> */}
                             </section>
