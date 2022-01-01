@@ -53,10 +53,10 @@ export class NoteAdd extends React.Component {
                         <input type="text" value={this.state.value} placeholder={this.state.placeHolder} onChange={this.handleChange}/>
                     </form>
                     <section>
-                        <button className="btn-note-txt btn-note" onClick={(ev)=> this.onChooseNoteType(ev,'Whats on your mind?','note-txt')}></button>
-                        <button className="btn-note-video btn-note" onClick={(ev)=> this.onChooseNoteType(ev,'Enter video URL...','note-video')}></button>
-                        <button className="btn-note-img btn-note" onClick={(ev)=> this.onChooseNoteType(ev,'Enter image URL...','note-img')}></button>
-                        <button className="btn-note-todos btn-note" onClick={(ev)=> this.onChooseNoteType(ev,'Enter comma separeted list','note-todos')}></button>
+                        <button className="btn-note-txt btn-note" title="Add Text" onClick={(ev)=> this.onChooseNoteType(ev,'Whats on your mind?','note-txt')}></button>
+                        <button className="btn-note-video btn-note" title="Add Video" onClick={(ev)=> this.onChooseNoteType(ev,'Enter video URL...','note-video')}></button>
+                        <button className="btn-note-img btn-note" title="Add Image" onClick={(ev)=> this.onChooseNoteType(ev,'Enter image URL...','note-img')}></button>
+                        <button className="btn-note-todos btn-note" title="Add List" onClick={(ev)=> this.onChooseNoteType(ev,'Enter comma separeted list','note-todos')}></button>
                         <button className="btn-add-todo btn-note" onClick={(ev)=> this.onChooseNoteType}></button>
                     </section>
                 </div>

@@ -27,7 +27,7 @@ export class NoteEditTool extends React.Component {
         const{onRemoveNote,onUpdateColor,copyNote}=this.props
         return (
             <section className="note-edit-tools flex">
-                <button className="btn-note-delete btn-note" onClick={()=>onRemoveNote(note.id)}></button>
+                <button className="btn-note-delete btn-note" title="Delete Note" onClick={()=>onRemoveNote(note.id)}></button>
                 <div className="btn-note-color btn-note"><span></span>
                     <div className="color-dropdown flex" >
                         {colors.map((color,idx)=> {return <div onClick ={()=>onUpdateColor(note.id,color)} style={{backgroundColor: color}} key={color}></div>})}

@@ -83,20 +83,9 @@ function _starterNotes() {
         isPinned: false,
         info: {
             title: '',
-            txt: 'blah blah blah'
+            txt: 'I want to eat hamburger today'
         },
         style: { backgroundColor: '#ffffff' },
-        label: [],
-    },
-    {
-        id: utilService.makeId(),
-        type: 'note-todos',
-        isPinned: true,
-        info: {
-            title: 'Sprint list so far',
-            todos: [{ txt: 'minesweeper', isChecked: true }, { txt: 'memegen', isChecked: true }, { txt: 'appsus', isChecked: false }],
-        },
-        style: { backgroundColor: '#ccff90' },
         label: [],
     },
     {
@@ -105,32 +94,9 @@ function _starterNotes() {
         isPinned: false,
         info: {
             title: '',
-            txt: 'blah blah blah'
+            txt: 'Remember to look at this code'
         },
         style: { backgroundColor: '#ffffff' },
-        label: [],
-    },
-    {
-        id: utilService.makeId(),
-        type: 'note-img',
-        isPinned: false,
-        info: {
-            title: 'Me while sprint 3',
-            url: 'https://media2.giphy.com/media/unQ3IJU2RG7DO/giphy.gif'
-        },
-        style: { backgroundColor: '#ffffff' },
-        label: [],
-    },
-
-    {
-        id: utilService.makeId(),
-        type: 'note-img',
-        isPinned: false,
-        info: {
-            title: '',
-            url: 'https://miro.medium.com/max/1050/1*80PmaIWGzskApKLQ_uSpZg.png'
-        },
-        style: { backgroundColor: '#aecbfa' },
         label: [],
     },
     {
@@ -153,6 +119,39 @@ function _starterNotes() {
             txt: 'blah blah blah'
         },
         style: { backgroundColor: '#ffffff' },
+        label: [],
+    },
+    {
+        id: utilService.makeId(),
+        type: 'note-todos',
+        isPinned: true,
+        info: {
+            title: 'Sprint list so far',
+            todos: [{ txt: 'minesweeper', isChecked: true }, { txt: 'memegen', isChecked: true }, { txt: 'appsus', isChecked: false }],
+        },
+        style: { backgroundColor: '#ccff90' },
+        label: [],
+    },
+    {
+        id: utilService.makeId(),
+        type: 'note-img',
+        isPinned: false,
+        info: {
+            title: 'Me while sprint 3',
+            url: 'https://media2.giphy.com/media/unQ3IJU2RG7DO/giphy.gif'
+        },
+        style: { backgroundColor: '#ffffff' },
+        label: [],
+    },
+    {
+        id: utilService.makeId(),
+        type: 'note-img',
+        isPinned: false,
+        info: {
+            title: '',
+            url: 'https://miro.medium.com/max/1050/1*80PmaIWGzskApKLQ_uSpZg.png'
+        },
+        style: { backgroundColor: '#aecbfa' },
         label: [],
     },
     ];

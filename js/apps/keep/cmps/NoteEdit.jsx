@@ -54,11 +54,6 @@ export class NoteEdit extends React.Component {
         }
     }
 
-    // onHandleChange = (noteId,todoIdx,todo)=>{
-    //     noteService.updateNoteTodo(noteId, todoIdx, todo.isChecked).then((note)=>{
-    //         this.setState({note})
-    //     });
-    // }
 
     handleChange=(ev,idx=null)=>{
         const{inputs}=this.state
@@ -151,7 +146,7 @@ export class NoteEdit extends React.Component {
             <section className="note-details">
                 <Link to="/keep"><div className="modal-background"></div></Link>
                 <div style={note.style} className="note-details-modal">
-                    <button className="btn-note-detail-close btn-note " onClick={this.onClose}></button>
+                    <button className="btn-note-detail-close btn-note " title="Close" onClick={this.onClose}></button>
                     <input type="text" placeholder="Title" value={title} name='title' onChange={this.handleChange}/>
                     {(this.noteType === 'note-txt') && <textarea value={inputs['note-txt']} name="txt" id="" cols="30" rows="10" onChange={this.handleChange}></textarea>}
                     {(this.noteType === 'note-img') && <div>
@@ -177,7 +172,7 @@ export class NoteEdit extends React.Component {
                     </div>}
                     <div className="edit-bar flex justify-between">
                         <NoteEditTool note={note} onUpdateColor={this.onUpdateColor} onRemoveNote={this.onRemoveNote}/>
-                        <button className="btn-note-detail-save btn-note " onClick={this.updateNoteToSave}></button>
+                        <button className="btn-note-detail-save btn-note " title="Save Note" onClick={this.updateNoteToSave}></button>
                     </div>
                 </div>
             </section>
