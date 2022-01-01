@@ -1,6 +1,6 @@
 // const { Link } = ReactRouterDOM
 
-import { Details } from '../cmps/Details.jsx'
+import { Details } from './../cmps/Details.jsx'
 
 export class MailPreview extends React.Component {
 
