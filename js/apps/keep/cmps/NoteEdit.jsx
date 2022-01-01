@@ -54,11 +54,6 @@ export class NoteEdit extends React.Component {
         }
     }
 
-    // onHandleChange = (noteId,todoIdx,todo)=>{
-    //     noteService.updateNoteTodo(noteId, todoIdx, todo.isChecked).then((note)=>{
-    //         this.setState({note})
-    //     });
-    // }
 
     handleChange=(ev,idx=null)=>{
         const{inputs}=this.state

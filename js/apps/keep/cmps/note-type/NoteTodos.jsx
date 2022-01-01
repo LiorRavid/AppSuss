@@ -1,5 +1,5 @@
 
-import { NoteTodo } from './NoteTodo.jsx'
+import { NoteTodo } from '../note-type/NoteTodo.jsx'
 
 export class NoteTodos extends React.Component {
 
