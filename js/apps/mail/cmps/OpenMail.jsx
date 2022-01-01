@@ -8,6 +8,7 @@ export class OpenMail extends React.Component {
 
     componentDidMount() {
         MailService.getEmailById(this.props.match.params.mailId).then((mail) => {
+
             this.setState({ mail })
         })
     }

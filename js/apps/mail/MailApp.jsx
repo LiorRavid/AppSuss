@@ -41,10 +41,7 @@ export class MailApp extends React.Component {
     };
 
     onNewMail = () => {
-
-
         this.setState({ isNewMail: true });
-
     }
     closeCompose = () => {
         this.setState( {isNewMail: false})
@@ -78,11 +75,12 @@ export class MailApp extends React.Component {
                     show={this.state.isNewMail}
                     prop={this.handleSubmit}
                     close = {this.closeCompose}
-
                 />
+
                 <SideBar
                     onNewMail={this.onNewMail}
                 />
+                
                 <MailList
                     mails={mails}
                     onRemoveMail={this.onRemoveMail}
