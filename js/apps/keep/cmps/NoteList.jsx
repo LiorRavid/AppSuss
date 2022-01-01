@@ -23,7 +23,7 @@ export class NoteList extends React.Component {
                     {notes.map((note) =>{
                         return (
                         <li className="note-preview-container" style={note.style} key={note.id}>
-                            <button className="btn-note-pin btn-note"></button>
+                            {/* <button className="btn-note-pin btn-note"></button> */}
                             <NotePreview note={note}/>
                             <section className="flex">
                                 <button className="btn-note-delete btn-note" title="Delete Note" onClick = {()=> remove(note.id)}></button>
