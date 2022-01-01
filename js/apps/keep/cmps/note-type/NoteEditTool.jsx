@@ -34,7 +34,7 @@ export class NoteEditTool extends React.Component {
                     </div>
                 </div>
                 
-                <button className="btn-note-copy btn-note"></button>
+                {/* <button className="btn-note-copy btn-note"></button> */}
             </section>
         )
     }

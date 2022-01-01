@@ -8,7 +8,8 @@ export const noteService = {
     updateNoteStyle,
     getNoteById,
     updateNoteTodo,
-    saveEditNote
+    saveEditNote,
+    duplicateNote
 };
 
 const STORAGE_KEY = 'noteDB';
@@ -163,6 +164,16 @@ function query(filterBy = null) {
     const filteredNotes = _getFilteredNotes(notes, filterBy)
     return Promise.resolve(filteredNotes)
 
+}
+
+function duplicateNote(note) {
+    let notes = _loadNotesFromStorage()
+    let newNote = note;
+    newNote.id = utilService.makeId();
+    newNote.isPinned = false;
+    notes.unshift(newNote)
+    _saveNotesToStorage(notes);
+    return Promise.resolve();
 }
 
 function removeNote(noteId) {
