@@ -7,7 +7,8 @@ export const noteService = {
     addNote,
     updateNoteStyle,
     getNoteById,
-    updateNoteTodo
+    updateNoteTodo,
+    saveEditNote
 };
 
 const STORAGE_KEY = 'noteDB';
@@ -200,6 +201,16 @@ function updateNoteTodo(noteIdx, todoIdx, value) {
     notes[Idx].info.todos[todoIdx].isChecked = value;
     _saveNotesToStorage(notes);
     return Promise.resolve(notes[Idx]);
+}
+
+function saveEditNote(editNote){
+    const notes = _loadNotesFromStorage()
+    let Idx = notes.findIndex(function (note) {
+        return note.id === editNote.id;
+    })
+    notes[Idx] = editNote
+    _saveNotesToStorage(notes);
+    return Promise.resolve();
 }
 
 function getNoteById(noteId) {

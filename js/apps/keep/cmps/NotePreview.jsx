@@ -1,5 +1,5 @@
 import { DynamicCmp } from './note-type/DynamicCmp.jsx'
-import { noteService } from '../services/note.service.js';
+import { noteService } from './../services/note.service.js';
 
 export class NotePreview extends React.Component{
 

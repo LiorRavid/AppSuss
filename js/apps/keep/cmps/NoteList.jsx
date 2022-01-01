@@ -34,7 +34,7 @@ export class NoteList extends React.Component {
                                 </div>
                                 <button className="btn-note-copy btn-note"></button>
                                 <Link to={`/keep/${note.id}`}><button className="btn-note-edit btn-note"></button></Link>
-                                <button className="btn-note-mail btn-note"></button>
+                                {/* <button className="btn-note-mail btn-note"></button> */}
                             </section>
                         </li>)}
                     )
