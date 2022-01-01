@@ -13,7 +13,10 @@
     margin-left: 2px;
     border: none;
     background-color: white;
-    
+    font-size: 1.5rem;
+}
+.btn-back-openmail:hover {
+background-color: lightgray ;
 }
 
 .btn-back-openmail::before {
