@@ -26,14 +26,14 @@ export class NoteList extends React.Component {
                             <button className="btn-note-pin btn-note"></button>
                             <NotePreview note={note}/>
                             <section className="flex">
-                                <button className="btn-note-delete btn-note" onClick = {()=> remove(note.id)}></button>
+                                <button className="btn-note-delete btn-note" title="Delete Note" onClick = {()=> remove(note.id)}></button>
                                 <div className="btn-note-color btn-note"><span></span>
                                     <div className="color-dropdown flex" >
                                         {colors.map((color,idx)=> {return <div onClick ={()=>onUpdateColor(note.id,color)} style={{backgroundColor: color}} key={color}></div>})}
                                     </div>
                                 </div>
-                                <button className="btn-note-copy btn-note" onClick={()=>onCopyNote(note)}></button>
-                                <Link to={`/keep/${note.id}`}><button className="btn-note-edit btn-note"></button></Link>
+                                <button className="btn-note-copy btn-note" title="Copy Note" onClick={()=>onCopyNote(note)}></button>
+                                <Link to={`/keep/${note.id}`}><button className="btn-note-edit btn-note" title="Edit Note"></button></Link>
                                 {/* <button className="btn-note-mail btn-note"></button> */}
                             </section>
                         </li>)}
