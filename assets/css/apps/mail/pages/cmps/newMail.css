@@ -1,35 +1,64 @@
 .new-mail{
-
-    border: 1px solid blueviolet;
+    border:lightgray solid 1px;
     position:fixed;
     right: 0;
     height: 87%;
     width: 80%;
-    background-color: burlywood;
     display: flex;
     flex-direction: column;
+    background-color: rgb(240, 240, 240);
 }
 
-.send-email-buttons{
-    height: 12%;
 
-}
 .mail-to{
     height: 8%;
-
+    font-size: 1rem;
+    background-color: rgb(240, 240, 240);
+    border: none;
 }
 
 .mail-subject{
     height: 8%;
-    
+    font-size: 1rem;
+    background-color: rgb(240, 240, 240);
+    border-top: lightgray solid 1px;
+    border-bottom: lightgray solid 1px;
+    border-left:none;
+    border-right:none;
 }
 
 .mail-body{
     height: 79%;
+    font-size: 1rem;
+    border: none;
 
     
 }
 
+.compose-btns{  
+    display: flex;
+    justify-content: space-between;
+}
+
 .close-compose {
-    width: 100%
+margin-right: 15px;
+font-size: 2rem;
+}
+
+
+.close-compose {
+    font-family: fa;
+}
+
+.close-compose::before {
+    content: '\f2ed';
+}
+.compose-send {
+    margin-left: 15px;
+    border: none;
+    border-radius: 2px;
+    color: whitesmoke;
+    background-color: rgb(48, 48, 206);
+    width: 70px;
+    height: 40px;
 }

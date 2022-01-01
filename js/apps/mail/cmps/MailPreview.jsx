@@ -53,8 +53,8 @@ export class MailPreview extends React.Component {
                 </article>
                 <article className="mail-buttons">
                     <button className='btn-delete' onClick={() => onRemoveMail(mail.id)} ></button>
-                    <button className='button'>mark</button>
-                    <button className='button'>star</button>
+                    {/* <button className='button'>mark</button>
+                    <button className='button'>star</button> */}
                 </article>
 
                 <Details

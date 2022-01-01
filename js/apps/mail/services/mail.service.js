@@ -18,17 +18,17 @@ const emails = [{
         id: 'e101',
         from: 'helena',
         subject: 'Miss you!',
-        body: 'Would love to catch up sometimes',
+        body: 'Would love to catch up sometime and sit for a cup of coffee',
         isRead: false,
         sentAt: 1551133930594,
         to: 'user@appsus.com',
-        sender: 'helena@wow.com'
+        sender: 'helena@sababa.com'
     },
     {
         id: 'e102',
         from: 'eyal',
-        subject: 'love you',
-        body: 'Would love to catch up sometimes',
+        subject: 'going out to a party',
+        body: 'what are you doin next friday night??',
         isRead: false,
         sentAt: 1551133930594,
         to: 'user@appsus.com',
@@ -37,13 +37,24 @@ const emails = [{
     {
         id: 'e103',
         from: 'cat',
-        subject: 'meow!',
-        body: 'Would love to catch up sometimessagagawgrawrgawrbavav adgawrva agawvargaegaergaergaergaergaergaeragerag',
+        subject: 'angry meow!',
+        body: 'where did you hide my food hooman?',
         isRead: false,
         sentAt: 1551133930594,
         to: 'user@appsus.com',
         sender: 'catboy@meow.com'
+    },
+    {
+        id: 'e104',
+        from: 'edmond',
+        subject: 'heard you are learning react',
+        body: 'that is amazing to hear!! if you need any help with it contact me whenever you like :)',
+        isRead: false,
+        sentAt: 1551133930594,
+        to: 'user@appsus.com',
+        sender: 'edmond@wowmail.com'
     }
+    
 ]
 
 _createMails()
@@ -84,7 +95,6 @@ function addMail(to,subject,body) {
 function getEmailById(id) {
     const mails = _loadMailsFromStorage() 
     const mail = mails.find(mail => mail.id === id)
-    console.log(mail)
     return Promise.resolve ( mail)
 }
 

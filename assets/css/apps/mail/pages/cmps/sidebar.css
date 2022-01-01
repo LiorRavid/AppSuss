@@ -13,7 +13,16 @@
 .btn-compose{
     margin-top: 20px;
     font-family: fa;
+    font-size: 1.5rem;
+    border-radius: 80%;
+    height: 70px;
+    width: 135px;
 }
+.btn-compose:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
 .btn-compose::before {
         content: '\f067'
     }
