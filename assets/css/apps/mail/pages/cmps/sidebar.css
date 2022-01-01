@@ -1,5 +1,18 @@
 .sidebar {
 
-    border: 2px solid black;
     width: 20%;
+    height: 100%;
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.btn-compose{
+    margin-top: 20px;
+    font-family: fa;
+}
+.btn-compose::before {
+        content: '\f067'
+    }
+

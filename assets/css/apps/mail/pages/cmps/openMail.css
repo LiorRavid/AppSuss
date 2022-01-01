@@ -1,5 +1,39 @@
-.open-mail{
 
+
+.open-mail-main{
+    text-align: left;
     height: 100%;
-    width: 100%;
+    width: 80%;
+    border: solid lightgray  1px;
+}
+
+.btn-back-openmail {
+    font-family: fa;
+    margin-left: 2px;
+    border: none;
+    background-color: white;
+}
+
+.btn-back-openmail::before {
+    content: '\f0a8';
+}
+
+.open-mail-head{
+    margin-top: 10px;
+    border: black 1px solid;
+    display: flex;
+    text-align: left;
+    
+} 
+
+.from-name{
+font-size: 1rem;
+margin-bottom: 2px;
+}
+
+.from-mail{
+margin-top: 5px;
+font-size: 0.8rem;
+margin-left: 5px;
+color: darkgray;
 }

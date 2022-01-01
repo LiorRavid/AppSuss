@@ -44,15 +44,15 @@ export class MailPreview extends React.Component {
             <div className="clean-link" >
                 <article className="mail-preview" onClick={() => this.onShow()}>
 
-                    <h6>{mail.from}</h6>
-                    <h6>{mail.subject}</h6>
-                    <h6>{this.defineBodyLength(mail.body, 35)}</h6>
-                    <h6>{this.calcDate()}</h6>
+                    <h6 className='mail-preview-from'>{mail.from}</h6>
+                    <h6 className='mail-preview-subject'>{mail.subject}</h6>
+                    <h6 className='mail-preview-body'>{this.defineBodyLength(mail.body, 35)}</h6>
+                    <h6 className='mail-preview-date'>{this.calcDate()}</h6>
 
 
                 </article>
                 <article className="mail-buttons">
-                    <button className='button' onClick={() => onRemoveMail(mail.id)} >delete</button>
+                    <button className='btn-delete' onClick={() => onRemoveMail(mail.id)} ></button>
                     <button className='button'>mark</button>
                     <button className='button'>star</button>
                 </article>

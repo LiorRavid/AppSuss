@@ -6,8 +6,8 @@
 
 
 .mail-buttons{
-
-    border: 1px solid blue;
+    border: lightgray 1px solid;
+    border-left: none;
     background-color: rgb(240, 240, 240);
     font-size: large;
     width: 15%;
@@ -19,7 +19,7 @@
 
 }
 .mail-preview:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 2px 15px rgb(0 0 0 / 30%);
 }
 
 .mail-preview:hover + .mail-buttons,  .mail-buttons:hover{
@@ -27,16 +27,11 @@
 
 }
 
-.button {
-    height: 100%;
-    width: 33.3%;
-}
 
 .mail-preview{
 
-    border: 1px solid red;
+    border: 1px solid lightgray;
     display: flex;
-    justify-content: space-between;
     height: 50px;
     padding-left: 4px;
     padding-right: 4px;
@@ -45,14 +40,34 @@
     grid-column: 1;
     grid-row: 1;
 }
+.mail-preview-from{
+    width: 20%;
+    text-align: left;
+}
+.mail-preview-subject{
+    width: 25%;
+    text-align: left;
+}
+.mail-preview-body{
+    width: 40%;
+    text-align: left;
+}
+.mail-preview-date{
+    width: 15%;
+}
 
 .details {
     display: grid;
     width: 100%;
-    border: darkgreen solid 2px;
+    border: whitesmoke solid 1px;
+}
+
+.details-container{
+    display: flex;
+    /* flex-direction: column; */
 }
 .details-sender{
-    width: 85%;
+    width: 100%;
     text-align: left;
     padding-left: 5px;
     align-content: left;
@@ -63,7 +78,8 @@
     grid-row: 1;
 }
 .details-body{
-    width: 85%;
+    width: 100%;
+    margin-top: 5px;
     text-align: left;
     padding-left: 5px;
     align-content: left;
@@ -73,11 +89,34 @@
 
 }
 
-.expand-mail {
-    margin-left: 94%;
-    width: 5%;
+.btn-full-mail {
+
     grid-column: 1;
     grid-row: 1;
-    margin-top: 10px;
+
     
+}
+
+.btn-delete {
+    border: none;
+    height: 100%;
+    width: 33.3%;
+}
+
+.btn-delete {
+    font-family: fa;
+}
+
+.btn-delete::before {
+    content: '\f2ed';
+}
+
+.btn-full-mail {
+    border: none;
+    font-family: fa;
+    background-color: white ;
+}
+
+.btn-full-mail::before {
+    content: '\f065'
 }

@@ -57,7 +57,7 @@ const criteria = {
 }
 
 function _createMail (to,subject,body) {
-const id =  Math.floor(Math.random() * 10000)
+const id =  ('a' + Math.floor(Math.random() * 10000))
 const from = 'johny'
 const sentAt = Date.now()
 const newMail = {
@@ -68,6 +68,7 @@ const newMail = {
     isRead: false,
     sentAt: sentAt,
     to: to,
+    sender: 'user@appsus.com'
 }
 return newMail
 }
@@ -81,8 +82,10 @@ function addMail(to,subject,body) {
   
 
 function getEmailById(id) {
-    const mailId = emails.find(email => email.id = id)
-    return mailId
+    const mails = _loadMailsFromStorage() 
+    const mail = mails.find(mail => mail.id === id)
+    console.log(mail)
+    return Promise.resolve ( mail)
 }
 
 function removeMail(id) {
