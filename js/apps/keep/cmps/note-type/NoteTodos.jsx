@@ -12,7 +12,6 @@ export class NoteTodos extends React.Component {
     }
 
     loadNote = () => {
-        console.log
         const { note } = this.props
         this.setState({note})
     }

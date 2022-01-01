@@ -30,7 +30,6 @@ export class NoteTodo extends React.Component {
         const{note,todo,idx} = this.props
         const{isChecked} = this.state
         if (!note) return <React.Fragment></React.Fragment>
-        console.log('render')
         return (
             <li key={idx}>
                 <input  ref={this.someInputRef} type="checkbox" name={idx} onChange={()=>this.handleChange(note.id,idx)}/>
